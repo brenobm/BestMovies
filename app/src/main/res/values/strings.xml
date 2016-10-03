@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BestMovies</string>
+    <string name="action_settings">Configurações</string>
+
+    <!-- Configurations strings -->
+    <string name="tmdb_key" translatable="false">d2817b1def1d102fef8fb6a6569c9ab6</string>
+    <string name="tmdb_key_param" translatable="false">api_key</string>
+    <string name="tmdb_page_param" translatable="false">page</string>
+
+    <string name="base_url" translatable="false">https://api.themoviedb.org/3/</string>
+    <string name="service_movie_directory" translatable="false">movie</string>
+    <string name="service_movie_popular" translatable="false">popular</string>
+
+    <string name="exception_malformed_url">URL do serviço inválida</string>
+    <string name="exception_network_error">Erro para acessar a internet</string>
+    <string name="exception_stream_error">Erro ao tratar os dados recebidos</string>
+    <string name="exception_json_parse">Erro ao parsear a resposta do serviço</string>
+</resources>
