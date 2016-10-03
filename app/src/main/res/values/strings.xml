@@ -10,9 +10,13 @@
     <string name="base_url" translatable="false">https://api.themoviedb.org/3/</string>
     <string name="service_movie_directory" translatable="false">movie</string>
     <string name="service_movie_popular" translatable="false">popular</string>
+    
+    <string name="base_url_image" translatable="false">http://image.tmdb.org/t/p</string>
+    <string name="file_size" translatable="false">w185</string>
 
     <string name="exception_malformed_url">URL do serviço inválida</string>
     <string name="exception_network_error">Erro para acessar a internet</string>
     <string name="exception_stream_error">Erro ao tratar os dados recebidos</string>
     <string name="exception_json_parse">Erro ao parsear a resposta do serviço</string>
+    <string name="exception_view_id">Não foi possível encontrar uma View para o ID %0s no layout passado.</string>
 </resources>

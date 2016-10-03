@@ -13,5 +13,11 @@
     tools:context="org.brenomachado.bestmovies.MainActivity"
     tools:showIn="@layout/activity_main">
 
-
+    <GridView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:numColumns="3"
+        android:id="@+id/grid_view_movies" />
 </RelativeLayout>

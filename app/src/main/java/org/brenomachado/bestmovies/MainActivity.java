@@ -18,7 +18,8 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity
                         implements TaskListener<MovieList>{
 
-    private ArrayAdapter<String> movieAdapter;
+    private MovieListAdapter movieAdapter;
+    private MovieList movieList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,11 +28,11 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        movieAdapter = new ArrayAdapter<String>(getApplicationContext(),
-                R.layout.test_layout,
-                R.id.text_view_test,
-                new ArrayList<String>()
-                );
+        movieAdapter = new MovieListAdapter(getApplicationContext(),
+                R.layout.movie_banner,
+                R.id.image_movie,
+                new MovieList()
+        );
 
         GridView gridMovies = (GridView) findViewById(R.id.grid_view_movies);
 
@@ -78,14 +79,9 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void update(MovieList data) {
-        this.movieAdapter.clear();
+        this.movieList = data;
 
-        Log.v("Teste", data.getMovies().size() + "");
-
-        for (Movie m : data.getMovies()) {
-            this.movieAdapter.add(m.getTitle());
-            Log.v("Teste", m.getTitle());
-        }
+        this.movieAdapter.add(data);
     }
 
     private void updateMovies() {
