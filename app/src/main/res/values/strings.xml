@@ -29,16 +29,17 @@
     <!-- Example General settings -->
 
     <string name="pref_sorted_movie_title">Selecione a ordenação</string>
-    <string name="pref_default_sorted_movie_title">popular_sort</string>
+    <string name="pref_default_sorted_movie_title">popular</string>
     <string name="pref_header_general">Gerais</string>
+    <string name="pref_order_key">pref_order_key</string>
 
     <string-array name="pref_sorted_movie">
         <item>Popularidade</item>
         <item>Avaliação</item>
     </string-array>
     <string-array name="pref_sorted_movie_values">
-        <item>popular_sort</item>
-        <item>top_rated_sort</item>
+        <item>popular</item>
+        <item>top_rated</item>
     </string-array>
 
 </resources>

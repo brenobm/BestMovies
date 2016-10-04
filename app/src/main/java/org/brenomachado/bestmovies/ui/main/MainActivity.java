@@ -1,7 +1,9 @@
 package org.brenomachado.bestmovies.ui.main;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -85,7 +87,7 @@ public class MainActivity extends AppCompatActivity
     protected void onStart() {
         super.onStart();
 
-        updateMovies();
+        updateMovies(1);
     }
 
     @Override
@@ -129,9 +131,13 @@ public class MainActivity extends AppCompatActivity
         this.movieAdapter.add(data);
     }
 
-    private void updateMovies() {
+    private void updateMovies(int page) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String sort = prefs.getString(getString(R.string.pref_order_key),
+                getString(R.string.pref_default_sorted_movie_title));
+
         GetMoviesTask task = new GetMoviesTask(this, getApplicationContext());
 
-        task.execute();
+        task.execute(sort, Integer.toString(page));
     }
 }

@@ -16,7 +16,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
 import org.brenomachado.bestmovies.R;
+import org.brenomachado.bestmovies.infrastructure.Utils;
 import org.brenomachado.bestmovies.infrastructure.tasks.GetImageTask;
 import org.brenomachado.bestmovies.infrastructure.tasks.TaskViewListener;
 import org.brenomachado.bestmovies.entity.Movie;
@@ -87,14 +90,9 @@ public class MovieListAdapter extends BaseAdapter
 
         imageView.setTag(movie);
 
-        if (movie.hasBitmap()) {
-            imageView.setImageBitmap(movie.getPosterImage());
-        } else {
-            GetImageTask task = new GetImageTask(context,
-                    this,
-                    imageView);
-            task.execute(movie.getPosterPath());
-        }
+        Picasso.with(context)
+                .load(Utils.getUrl(movie.getPosterPath(), context))
+                .into(imageView);
 
         return view;
     }

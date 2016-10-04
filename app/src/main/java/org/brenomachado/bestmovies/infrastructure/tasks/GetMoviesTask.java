@@ -44,8 +44,11 @@ public class GetMoviesTask extends AsyncTask<String, Void, MovieList> {
     @Override
     protected MovieList doInBackground(String... params) {
 
+        String sort = params[0];
+        int page = Integer.parseInt(params[1]);
+
         try {
-            Uri uriService = buildUri(1);
+            Uri uriService = buildUri(sort, page);
             String jsonResult = retriveJsonFromService(uriService);
 
             MovieList movieList = MovieDataParse.getMoviesDataFromJson(jsonResult);
@@ -113,7 +116,7 @@ public class GetMoviesTask extends AsyncTask<String, Void, MovieList> {
         return jsonResponse;
     }
 
-    private Uri buildUri(int page) {
+    private Uri buildUri(String sort, int page) {
         validPageRange(page);
 
         String baseUrl = context.getString(R.string.base_url);
@@ -121,7 +124,7 @@ public class GetMoviesTask extends AsyncTask<String, Void, MovieList> {
         String apiKeyParam = context.getString(R.string.tmdb_key_param);
         String pageParam = context.getString(R.string.tmdb_page_param);
         String serviceDirectory = context.getString(R.string.service_movie_directory);
-        String service = context.getString(R.string.service_movie_popular);
+        String service = sort;
 
         Uri uri = Uri.parse(baseUrl);
 

@@ -10,8 +10,11 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import org.brenomachado.bestmovies.R;
 import org.brenomachado.bestmovies.entity.Movie;
+import org.brenomachado.bestmovies.infrastructure.Utils;
 
 import java.text.SimpleDateFormat;
 
@@ -51,7 +54,10 @@ public class MovieDetailActivity extends AppCompatActivity {
         textAverage.setText(String.format("Média de votos: %.2f", movie.getVoteAverage()));
 
         ImageView imagePoster = (ImageView) findViewById(R.id.image_movie_poster);
-        imagePoster.setImageBitmap(movie.getPosterImage());
+
+        Picasso.with(getApplicationContext())
+                .load(Utils.getUrl(movie.getPosterPath(), getApplicationContext()))
+                .into(imagePoster);
     }
 
 }
