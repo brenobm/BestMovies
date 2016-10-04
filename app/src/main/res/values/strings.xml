@@ -10,7 +10,7 @@
     <string name="base_url" translatable="false">https://api.themoviedb.org/3/</string>
     <string name="service_movie_directory" translatable="false">movie</string>
     <string name="service_movie_popular" translatable="false">popular</string>
-    
+
     <string name="base_url_image" translatable="false">http://image.tmdb.org/t/p</string>
     <string name="file_size" translatable="false">w185</string>
 
@@ -19,4 +19,26 @@
     <string name="exception_stream_error">Erro ao tratar os dados recebidos</string>
     <string name="exception_json_parse">Erro ao parsear a resposta do serviço</string>
     <string name="exception_view_id">Não foi possível encontrar uma View para o ID %0s no layout passado.</string>
+
+    <string name="title_activity_movie_detail">Detalhes</string>
+
+    <string name="title_activity_settings">Configurações</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+
+    <string name="pref_sorted_movie_title">Selecione a ordenação</string>
+    <string name="pref_default_sorted_movie_title">popular_sort</string>
+    <string name="pref_header_general">Gerais</string>
+
+    <string-array name="pref_sorted_movie">
+        <item>Popularidade</item>
+        <item>Avaliação</item>
+    </string-array>
+    <string-array name="pref_sorted_movie_values">
+        <item>popular_sort</item>
+        <item>top_rated_sort</item>
+    </string-array>
+
 </resources>

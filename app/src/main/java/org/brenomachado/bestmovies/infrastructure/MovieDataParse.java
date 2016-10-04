@@ -1,8 +1,10 @@
-package org.brenomachado.bestmovies;
+package org.brenomachado.bestmovies.infrastructure;
 
-import android.content.res.Resources;
 import android.util.Log;
 
+import org.brenomachado.bestmovies.entity.Movie;
+import org.brenomachado.bestmovies.entity.MovieList;
+import org.brenomachado.bestmovies.exception.KnowException;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -10,7 +12,6 @@ import org.json.JSONObject;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by breno on 30/09/2016.

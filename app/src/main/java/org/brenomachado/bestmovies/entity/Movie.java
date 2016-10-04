@@ -1,14 +1,17 @@
-package org.brenomachado.bestmovies;
+package org.brenomachado.bestmovies.entity;
 
-import android.net.Uri;
+import android.graphics.Bitmap;
 
+import org.brenomachado.bestmovies.infrastructure.SerializableBitmap;
+
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by breno on 29/09/2016.
  */
 
-public class Movie {
+public class Movie implements Serializable {
     private String title;
 
     private Date releaseDate;
@@ -18,6 +21,8 @@ public class Movie {
     private double voteAverage;
 
     private String plotSynopsis;
+
+    private SerializableBitmap posterImage;
 
     public String getTitle() {
         return title;
@@ -57,5 +62,25 @@ public class Movie {
 
     public void setPlotSynopsis(String plotSynopsis) {
         this.plotSynopsis = plotSynopsis;
+    }
+
+    public Bitmap getPosterImage() {
+        if(this.posterImage == null) {
+            return null;
+        }
+
+        return posterImage.bitmap;
+    }
+
+    public void setPosterImage(Bitmap posterImage) {
+        if(this.posterImage == null) {
+            this.posterImage = new SerializableBitmap(posterImage);
+        } else {
+            this.posterImage.bitmap = posterImage;
+        }
+    }
+
+    public boolean hasBitmap() {
+        return this.posterImage != null;
     }
 }

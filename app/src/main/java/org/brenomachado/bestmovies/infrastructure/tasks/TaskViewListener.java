@@ -1,4 +1,4 @@
-package org.brenomachado.bestmovies;
+package org.brenomachado.bestmovies.infrastructure.tasks;
 
 import android.graphics.Bitmap;
 import android.widget.ImageView;

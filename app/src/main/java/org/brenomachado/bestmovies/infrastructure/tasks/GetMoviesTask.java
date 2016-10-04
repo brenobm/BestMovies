@@ -1,10 +1,14 @@
-package org.brenomachado.bestmovies;
+package org.brenomachado.bestmovies.infrastructure.tasks;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
+
+import org.brenomachado.bestmovies.exception.KnowException;
+import org.brenomachado.bestmovies.infrastructure.MovieDataParse;
+import org.brenomachado.bestmovies.R;
+import org.brenomachado.bestmovies.entity.MovieList;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,7 +18,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.InvalidParameterException;
-import java.util.List;
 
 /**
  * Created by breno on 29/09/2016.

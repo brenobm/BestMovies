@@ -1,4 +1,4 @@
-package org.brenomachado.bestmovies;
+package org.brenomachado.bestmovies.exception;
 
 /**
  * Created by breno on 30/09/2016.

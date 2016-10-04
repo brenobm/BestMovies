@@ -1,5 +1,8 @@
-package org.brenomachado.bestmovies;
+package org.brenomachado.bestmovies.entity;
 
+import org.brenomachado.bestmovies.entity.Movie;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +10,7 @@ import java.util.List;
  * Created by breno on 30/09/2016.
  */
 
-public class MovieList {
+public class MovieList implements Serializable {
     private int page;
     private long totalResults;
     private long totalPages;
