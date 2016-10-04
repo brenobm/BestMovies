@@ -105,7 +105,6 @@ public class MovieListAdapter extends BaseAdapter
     @Override
     public void update(Bitmap data, ImageView view) {
         view.setImageBitmap(data);
-        ((Movie)view.getTag()).setPosterImage(data);
     }
 
     public void add(@Nullable MovieList object) {

@@ -22,8 +22,6 @@ public class Movie implements Serializable {
 
     private String plotSynopsis;
 
-    private SerializableBitmap posterImage;
-
     public String getTitle() {
         return title;
     }
@@ -64,23 +62,4 @@ public class Movie implements Serializable {
         this.plotSynopsis = plotSynopsis;
     }
 
-    public Bitmap getPosterImage() {
-        if(this.posterImage == null) {
-            return null;
-        }
-
-        return posterImage.bitmap;
-    }
-
-    public void setPosterImage(Bitmap posterImage) {
-        if(this.posterImage == null) {
-            this.posterImage = new SerializableBitmap(posterImage);
-        } else {
-            this.posterImage.bitmap = posterImage;
-        }
-    }
-
-    public boolean hasBitmap() {
-        return this.posterImage != null;
-    }
 }
